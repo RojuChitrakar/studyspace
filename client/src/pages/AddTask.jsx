@@ -25,7 +25,7 @@ function AddTask() {
     e.preventDefault();
 
     try {
-      await api.post("/tasks", formData);
+      await api.post("/api/tasks", formData);
       navigate("/tasks");
     } catch (error) {
       alert("Failed to create task");
