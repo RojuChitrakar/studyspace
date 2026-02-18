@@ -14,7 +14,7 @@ function Tasks() {
   }, []);
 
   const fetchTasks = async () => {
-    const res = await api.get("/tasks");
+    const res = await api.get("/api/tasks");
     setTasks(res.data);
   };
 
@@ -23,14 +23,14 @@ function Tasks() {
   };
 
   const toggleStatus = async (task) => {
-    await api.put(`/tasks/${task._id}`, {
+    await api.put(`/api/tasks/${task._id}`, {
       status: task.status === "completed" ? "pending" : "completed",
     });
     fetchTasks();
   };
 
   const handleDelete = async (id) => {
-    await api.delete(`/tasks/${id}`);
+    await api.delete(`/api/tasks/${id}`);
     fetchTasks();
   };
 
