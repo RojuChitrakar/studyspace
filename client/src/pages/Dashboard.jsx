@@ -22,8 +22,8 @@ function Dashboard() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const tasksRes = await api.get("/tasks");
-      const notesRes = await api.get("/notes");
+      const tasksRes = await api.get("/api/tasks");
+      const notesRes = await api.get("/api/notes");
       setTasks(tasksRes.data);
       setNotes(notesRes.data);
     };
