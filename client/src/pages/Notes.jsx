@@ -15,12 +15,12 @@ function Notes() {
   }, []);
 
   const fetchNotes = async () => {
-    const res = await api.get("/notes");
+    const res = await api.get("/api/notes");
     setNotes(res.data);
   };
 
   const handleDelete = async (id) => {
-    await api.delete(`/notes/${id}`);
+    await api.delete(`/api/notes/${id}`);
     fetchNotes();
   };
 
@@ -32,7 +32,7 @@ function Notes() {
         )
       );
 
-      await api.put(`/notes/${id}`, updatedFields);
+      await api.put(`/api/notes/${id}`, updatedFields);
 
       setEditingId(null);
     } catch (error) {
