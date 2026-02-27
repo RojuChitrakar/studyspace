@@ -13,7 +13,7 @@ function AddNote() {
     e.preventDefault();
 
     try {
-      const res = await api.post("/notes", {
+      const res = await api.post("/api/notes", {
         title,
         content,
       });

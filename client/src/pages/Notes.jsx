@@ -149,7 +149,7 @@ function Notes() {
   }, []);
 
   const fetchNotes = async () => {
-    const res = await api.get("/notes");
+    const res = await api.get("/api/notes");
     setNotes(res.data);
 
     // initialize z-indexes
@@ -171,7 +171,7 @@ function Notes() {
   };
 
   const handleDelete = async (id) => {
-    await api.delete(`/notes/${id}`);
+    await api.delete(`/api/notes/${id}`);
     fetchNotes();
   };
 
@@ -183,7 +183,7 @@ function Notes() {
         )
       );
 
-      await api.put(`/notes/${id}`, updatedFields);
+      await api.put(`/api/notes/${id}`, updatedFields);
 
       // ❗ DO NOT reset editing immediately
       // Let user control closing edit manually

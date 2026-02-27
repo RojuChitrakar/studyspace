@@ -1,3 +1,4 @@
+
 // import study from "../assets/Study.png";
 // import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
@@ -121,6 +122,9 @@
 
 
 //Password validation and navigate to Dashboard 
+
+
+
 import study from "../assets/Study.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -150,7 +154,10 @@ function Register() {
     }
 
     try {
-      const res = await api.post("/auth/register", {
+// <<<<<<< HEAD
+//       const res = await api.post("/auth/register", {
+// =======
+      await api.post("/api/auth/register", {
         name,
         email,
         password,
